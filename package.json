@@ -1,0 +1,24 @@
+{
+	"name": "dir-who-cli",
+	"version": "0.0.1",
+	"description": "A CLI for ls",
+	"main": "index.js",
+	"scripts": {
+		"cli": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"dirwho": "index.js"
+	},
+	"keywords": [
+		"ls",
+		"cli"
+	],
+	"repository": "romw314/ls-cli",
+	"author": "romw314",
+	"license": "MIT",
+	"dependencies": {
+		"ls": "^0.2.1",
+		"yargs": "^17.7.2"
+	}
+}
