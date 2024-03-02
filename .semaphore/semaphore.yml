@@ -7,7 +7,7 @@ agent:
 blocks:
   - name: Test
     task:
-    	env_vars:
+      env_vars:
         - name: CI
           value: 'true'
       jobs:
