@@ -14,7 +14,7 @@ blocks:
         - name: Test
           commands:
             - checkout
-            - nvm use 16
+            - nvm install 16
             - corepack enable
             - cache restore
             - pnpm install
