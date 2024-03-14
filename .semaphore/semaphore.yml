@@ -1,0 +1,26 @@
+version: v1.0
+name: CI
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Test
+    task:
+      env_vars:
+        - name: CI
+          value: 'true'
+      jobs:
+        - name: Test
+          commands:
+            - checkout
+            - cache restore nvm
+            - nvm install 16
+            - corepack enable
+            - cache store nvm "$HOME/.nvm"
+            - cache restore pnpm-store
+            - cache restore nmod
+            - pnpm install
+            - cache store pnpm-store "$(pnpm store path)"
+            - cache store nmod node_modules
+            - pnpm test
